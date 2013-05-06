@@ -14,7 +14,8 @@ public class MainActivity extends Activity {
 		sendIntent.setAction(Intent.ACTION_SEND);
 		sendIntent.putExtra(Intent.EXTRA_TEXT, getIntent().getDataString());
 		sendIntent.setType("text/plain");
-		startActivity(Intent.createChooser(sendIntent, "Share"));
+		startActivity(Intent.createChooser(sendIntent, "Share " + getIntent()
+				.getDataString()));
 		finish();
 	}
 }
